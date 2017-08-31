@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    >
+
+    <zhy.scau.com.personalmemo.bussiness.perform.widget.chart.TachographView
+        android:id="@+id/tachview_try_count"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/circle_purple"
+    />
+
+    <EditText
+        android:id="@+id/edt_pswnote_password_input"
+        android:hint="@string/psw_note_edtinput_hint"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:gravity="center"
+        android:textColorHint="@color/colorGray6"
+        android:background="@drawable/none"
+        android:layout_alignTop="@id/tachview_try_count"
+        android:layout_marginTop="100dp"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+    />
+
+    <Button
+        android:id="@+id/btn_confirm_password"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="GO"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/text_size_20"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/edt_pswnote_password_input"
+        android:background="@drawable/circle_p_yellow_n_blue"
+        android:layout_centerHorizontal="true"
+    />
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_pw_select"
+        android:layout_above="@id/tachview_try_count"
+        android:drawableRight="@drawable/ic_arrow_drop_down_white"
+        android:layout_width="200dp"
+        android:textColor="@color/colorAccentDark"
+        android:background="@color/colorAccent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        tools:text="密码类型"
+        android:padding="5dp"
+        android:textSize="@dimen/text_size_20"
+    />
+
+
+</RelativeLayout>

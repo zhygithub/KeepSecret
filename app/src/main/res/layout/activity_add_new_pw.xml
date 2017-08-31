@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context="zhy.scau.com.keepyourword.AddNewPwActivity">
+
+    <View
+        android:background="#ff000000"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <LinearLayout
+        android:id="@+id/ll_new_pw_panel"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_add_new_pw"
+        android:orientation="vertical"
+    >
+
+        <EditText
+            android:id="@+id/edt_new_pw_name"
+            android:inputType="text"
+            android:layout_width="260dp"
+            android:layout_height="@dimen/common_edt_height"
+            android:hint="@string/edtinput_hint_new_pw_name"
+            android:textColorHint="@color/colorGray6"
+            android:background="@drawable/none"
+            android:paddingLeft="10dp"
+            android:focusable="true"
+        />
+
+        <EditText
+            android:paddingLeft="10dp"
+            android:id="@+id/edt_new_pw_value"
+            android:inputType="textPassword"
+            android:layout_width="260dp"
+            android:layout_height="@dimen/common_edt_height"
+            android:hint="@string/edtinput_hint_new_pw_value"
+            android:textColorHint="@color/colorGray6"
+            android:focusable="true"
+            android:background="@drawable/none"
+
+        />
+
+        <EditText
+            android:paddingLeft="10dp"
+            android:id="@+id/edt_new_confirm_value"
+            android:inputType="textPassword"
+            android:layout_width="260dp"
+            android:layout_height="@dimen/common_edt_height"
+            android:hint="@string/edtinput_hint_new_confirm_value"
+            android:textColorHint="@color/colorGray6"
+            android:focusable="true"
+            android:background="@drawable/none"
+
+        />
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_enter"
+        android:layout_below="@id/ll_new_pw_panel"
+        android:layout_centerHorizontal="true"
+        android:background="#ff000000"
+        android:layout_width="300dp"
+        android:layout_height="10dp"/>
+
+    <View
+        android:id="@+id/view_left_mei"
+        android:layout_marginTop="60dp"
+        android:background="#ff000000"
+        android:layout_width="100dp"
+        android:layout_height="10dp"/>
+
+    <View
+        android:id="@+id/view_right_mei"
+        android:layout_marginTop="60dp"
+        android:background="#ff000000"
+        android:layout_alignParentRight="true"
+        android:layout_width="100dp"
+        android:layout_height="10dp"/>
+
+    <View
+        android:layout_below="@id/view_left_mei"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="#ff000000"
+        android:layout_width="60dp"
+        android:layout_height="60dp"/>
+
+    <View
+        android:layout_below="@id/view_left_mei"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:background="#ff000000"
+        android:layout_width="60dp"
+        android:layout_height="60dp"/>
+
+    <View
+        android:layout_below="@id/view_enter"
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+    <Button
+        android:id="@+id/btn_new_pw_cancle"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="@string/btn_cacel"
+        android:gravity="left|bottom"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_left_bottom"
+        android:padding="10dp"
+        android:elevation="10dp"
+    />
+
+    <Button
+        android:id="@+id/btn_new_pw_ensure"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="@string/btn_ensure"
+        android:gravity="right|bottom"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_right_bottom"
+        android:padding="10dp"
+        android:elevation="10dp"
+    />
+
+    <View
+        android:layout_above="@id/btn_new_pw_cancle"
+        android:background="#ff000000"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+</RelativeLayout>

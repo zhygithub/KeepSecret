@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">KeepSecret</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="psw_note_edtinput_hint">请输入密码</string>
+
+    <string name="edtinput_hint_new_pw_name">请输入密码对应的名称</string>
+    <string name="edtinput_hint_new_pw_value">请输入密码</string>
+    <string name="edtinput_hint_new_confirm_value">请确认密码</string>
+
+    <string name="btn_ensure">确认</string>
+    <string name="btn_cacel">取消</string>
+
+    <string name="about_us">关于这个应用\n\n这是个纯本地应用，无任何联网动作\n\n仅仅用作本地保存各种密码用途，密码经过加密后存在本地数据库，相当安全（一般也没有人想盗你密码）\n\n因为是保存在本地数据库，所以数据清空后就没有办法找回密码信息，清空数据请谨慎，后果自负。
+    </string>
+
+
+
+</resources>

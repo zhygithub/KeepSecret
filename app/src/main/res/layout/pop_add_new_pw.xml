@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color5Gray9"
+>
+    <LinearLayout
+        android:id="@+id/ll_new_pw_panel"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+    >
+
+        <EditText
+            android:id="@+id/edt_new_pw_name"
+            android:inputType="text"
+            android:layout_width="260dp"
+            android:layout_height="@dimen/common_edt_height"
+            android:hint="@string/edtinput_hint_new_pw_name"
+            android:textColorHint="@color/colorGray6"
+            android:focusable="true"
+        />
+
+        <EditText
+            android:id="@+id/edt_new_pw_value"
+            android:inputType="textPassword"
+            android:layout_width="260dp"
+            android:layout_height="@dimen/common_edt_height"
+            android:hint="@string/edtinput_hint_new_pw_value"
+            android:textColorHint="@color/colorGray6"
+            android:focusable="true"
+
+        />
+
+        <EditText
+            android:id="@+id/edt_new_confirm_value"
+            android:inputType="textPassword"
+            android:layout_width="260dp"
+            android:layout_height="@dimen/common_edt_height"
+            android:hint="@string/edtinput_hint_new_confirm_value"
+            android:textColorHint="@color/colorGray6"
+            android:focusable="true"
+        />
+
+        <Button
+            android:id="@+id/btn_new_pw_ensure"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/common_edt_height"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/btn_ensure"
+        />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_new_pw_cancle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@color/colorAccent"
+        android:layout_alignRight="@id/ll_new_pw_panel"
+        android:layout_above="@id/ll_new_pw_panel"
+    />
+
+</RelativeLayout>
