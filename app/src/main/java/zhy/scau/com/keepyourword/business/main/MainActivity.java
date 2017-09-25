@@ -1,41 +1,33 @@
-package zhy.scau.com.keepyourword;
+package zhy.scau.com.keepyourword.business.main;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.Dimension;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import zhy.scau.com.keepyourword.AboutUsActivity;
+import zhy.scau.com.keepyourword.R;
 import zhy.scau.com.keepyourword.adapter.MenuListAdapter;
 import zhy.scau.com.keepyourword.adapter.PwNamesAdapter;
+import zhy.scau.com.keepyourword.business.pwnote.AddNewPwActivity;
 import zhy.scau.com.keepyourword.db.DBHelper;
 import zhy.scau.com.keepyourword.db.PWBean;
 import zhy.scau.com.keepyourword.db.PWDao;
+import zhy.scau.com.keepyourword.frame.FrameActivity;
 import zhy.scau.com.keepyourword.popupwindow.PoupWindow;
 import zhy.scau.com.keepyourword.utils.BaseConstant;
 import zhy.scau.com.keepyourword.utils.BaseUtils;
@@ -43,7 +35,7 @@ import zhy.scau.com.keepyourword.utils.EncryptUtils;
 import zhy.scau.com.keepyourword.utils.ScreenUtils;
 import zhy.scau.com.personalmemo.bussiness.perform.widget.chart.TachographView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FrameActivity {
 
     private TachographView mTachView;
 

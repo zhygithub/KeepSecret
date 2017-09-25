@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
-    tools:context="zhy.scau.com.keepyourword.AddNewPwActivity">
+    tools:context="zhy.scau.com.keepyourword.business.pwnote.AddNewPwActivity">
 
     <View
         android:background="#ff000000"

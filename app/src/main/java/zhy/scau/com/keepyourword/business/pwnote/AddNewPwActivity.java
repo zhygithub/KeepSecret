@@ -1,15 +1,12 @@
-package zhy.scau.com.keepyourword;
+package zhy.scau.com.keepyourword.business.pwnote;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +14,7 @@ import android.widget.LinearLayout;
 
 import java.util.List;
 
+import zhy.scau.com.keepyourword.R;
 import zhy.scau.com.keepyourword.db.DBHelper;
 import zhy.scau.com.keepyourword.db.PWBean;
 import zhy.scau.com.keepyourword.db.PWDao;
