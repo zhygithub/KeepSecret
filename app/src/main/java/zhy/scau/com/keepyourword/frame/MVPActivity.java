@@ -2,6 +2,8 @@ package zhy.scau.com.keepyourword.frame;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
 
@@ -116,6 +118,15 @@ public abstract class MVPActivity<T extends AbstractView> extends BaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
         for (T view: mViews) {
             view.getPresenter().onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        for (T view: mViews) {
+            view.getPresenter().onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

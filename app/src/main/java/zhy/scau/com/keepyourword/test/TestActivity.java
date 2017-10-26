@@ -1,5 +1,7 @@
 package zhy.scau.com.keepyourword.test;
 
+import android.support.annotation.NonNull;
+
 import zhy.scau.com.keepyourword.R;
 import zhy.scau.com.keepyourword.frame.FrameActivity;
 
@@ -20,4 +22,8 @@ public class TestActivity extends FrameActivity {
     }
 
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
 }

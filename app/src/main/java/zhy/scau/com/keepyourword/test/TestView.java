@@ -2,14 +2,13 @@ package zhy.scau.com.keepyourword.test;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
-
-import org.greenrobot.eventbus.EventBus;
+import android.widget.Button;
 
 import zhy.scau.com.keepyourword.R;
-import zhy.scau.com.keepyourword.eventbus.events.TestEvent;
 import zhy.scau.com.keepyourword.frame.AbstractView;
 
 /**
@@ -18,7 +17,12 @@ import zhy.scau.com.keepyourword.frame.AbstractView;
 
 public class TestView extends AbstractView<TestPresenter> implements ITestContract.ITestView {
 
-    private TextView mTvTest;
+
+    private Button btnCamera;
+
+    private Button btnPhotos;
+
+    private Uri uri;
 
     public TestView(Activity activity) {
         super(activity);
@@ -26,7 +30,7 @@ public class TestView extends AbstractView<TestPresenter> implements ITestContra
 
     @Override
     public void show(String data) {
-        mTvTest.setText(data);
+
     }
 
     @Override
@@ -36,15 +40,20 @@ public class TestView extends AbstractView<TestPresenter> implements ITestContra
 
     @Override
     protected void onCreate(Bundle savedInstanceState, View rootView) {
-        mTvTest = rootView.findViewById(R.id.tv_test);
+        btnCamera = rootView.findViewById(R.id.btn_camera);
+        btnPhotos = rootView.findViewById(R.id.btn_photos);
 
-        mTvTest.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+        btnCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TestEvent testEvent = new TestEvent();
-                testEvent.data = "yyrt";
-                EventBus.getDefault().post(testEvent);
+                getPresenter().callCamera();
             }
         });
     }
+
+
 }

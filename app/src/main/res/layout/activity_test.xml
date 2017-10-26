@@ -5,21 +5,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="zhy.scau.com.keepyourword.AboutUsActivity"
-    android:background="@color/colorAccent"
->
+    android:fitsSystemWindows="true"
+    tools:context="zhy.scau.com.keepyourword.test.TestActivity">
 
-    <TextView
-        android:id="@+id/tv_test"
-        android:layout_margin="40dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg_round_big"
-        android:textColor="@color/colorAccent"
-        android:text="@string/about_us"
-        android:textSize="@dimen/text_size_18"
-        android:padding="10dp"
-        android:gravity="left"
+    <Button
+        android:id="@+id/btn_camera"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="CAMERA"
+        android:layout_centerInParent="true"
+
+    />
+
+
+    <Button
+        android:id="@+id/btn_photos"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="PHOTOS"
+        android:layout_below="@id/btn_camera"
+        android:layout_centerHorizontal="true"
     />
 
 </RelativeLayout>
+

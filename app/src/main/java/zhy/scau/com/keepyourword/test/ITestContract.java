@@ -10,9 +10,13 @@ public interface ITestContract extends IBaseContract {
 
     interface ITestView extends IBaseContract.IBaseView{
         void show(String data);
+
+
     }
 
     interface ITestPresenter extends IBasePresenter{
         void refreshData();
+
+        void callCamera();
     }
 }

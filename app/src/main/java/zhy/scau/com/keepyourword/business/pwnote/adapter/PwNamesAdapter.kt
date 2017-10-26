@@ -1,4 +1,4 @@
-package zhy.scau.com.keepyourword.adapter
+package zhy.scau.com.keepyourword.business.pwnote.adapter
 
 import android.content.Context
 import android.view.LayoutInflater

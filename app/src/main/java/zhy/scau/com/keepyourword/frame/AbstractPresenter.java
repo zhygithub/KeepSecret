@@ -1,8 +1,11 @@
 package zhy.scau.com.keepyourword.frame;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.support.annotation.NonNull;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -21,6 +24,10 @@ public abstract class AbstractPresenter<T extends AbstractView> implements IBase
     private Context mContext;
 
     private T mAbstractView;
+
+    public static  final int RESULT_OK = Activity.RESULT_OK;
+
+    public static final  int RESULT_CANCELED = Activity.RESULT_CANCELED;
 
     public AbstractPresenter(Context context, T abstractView){
         this.mContext = context;
@@ -55,4 +62,19 @@ public abstract class AbstractPresenter<T extends AbstractView> implements IBase
 
     }
 
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+    }
+
+    @Override
+    public void startActivity(Intent intent) {
+        mContext.startActivity(intent);
+    }
+
+    @Override
+    public void startActivityForResult(Intent intent, int requestCode) {
+        if(mContext instanceof Activity){
+            ((Activity)mContext).startActivityForResult(intent, requestCode);
+        }
+    }
 }
