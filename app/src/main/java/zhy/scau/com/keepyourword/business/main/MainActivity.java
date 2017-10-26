@@ -21,7 +21,7 @@ import java.util.List;
 
 import zhy.scau.com.keepyourword.AboutUsActivity;
 import zhy.scau.com.keepyourword.R;
-import zhy.scau.com.keepyourword.adapter.MenuListAdapter;
+import zhy.scau.com.keepyourword.business.main.adapter.MenuListAdapter;
 import zhy.scau.com.keepyourword.business.pwnote.adapter.PwNamesAdapter;
 import zhy.scau.com.keepyourword.business.pwnote.AddNewPwActivity;
 import zhy.scau.com.keepyourword.db.DBHelper;
