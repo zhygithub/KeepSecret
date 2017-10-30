@@ -13,6 +13,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -23,6 +24,11 @@ import zhy.scau.com.keepyourword.eventbus.events.TestEvent;
 import zhy.scau.com.keepyourword.eventbus.events.LoginEvent;
 import zhy.scau.com.keepyourword.eventbus.events.LogoutEvent;
 import zhy.scau.com.keepyourword.frame.AbstractPresenter;
+import zhy.scau.com.keepyourword.network.BaseResponse;
+import zhy.scau.com.keepyourword.network.INetWorkCallBack;
+import zhy.scau.com.keepyourword.network.NetWorkCore;
+import zhy.scau.com.keepyourword.network.apis.TestApi;
+import zhy.scau.com.keepyourword.network.requests.TestRequest;
 
 /**
  * Created by ZhengHy on 2017-09-15.
@@ -47,6 +53,23 @@ public class TestPresenter extends AbstractPresenter<TestView> implements ITestC
             //通过FileProvider创建一个content类型的Uri(android 7.0需要这样的方法访问)
             uri = FileProvider.getUriForFile(getContext(), "zhy.scau.com.fileprovider", file);//使用在manifest里面设置的包名
         }
+
+
+        TestRequest request = new TestRequest("101010100");
+        NetWorkCore.INSTANCE.requestNet(0, request, new INetWorkCallBack<BaseResponse>() {
+            @Override
+            public void onSuccess(BaseResponse data) {
+                Log.d("netwwwww",data.toString());
+            }
+
+
+            @Override
+            public void onFailedWithOriginData(int failedCode, String originData) {
+                Log.d("netwwwww",String.valueOf(failedCode) + originData);
+
+            }
+        });
+
     }
 
     @Override
