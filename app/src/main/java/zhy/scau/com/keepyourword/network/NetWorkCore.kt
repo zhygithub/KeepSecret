@@ -1,12 +1,17 @@
 package zhy.scau.com.keepyourword.network
 
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Retrofit
+import zhy.scau.com.keepyourword.network.apis.TestApi
+import zhy.scau.com.keepyourword.network.requests.TestRequest
+import zhy.scau.com.keepyourword.network.responses.TestResponse
 
 /**
  * Created by ZhengHy on 2017-10-26.
  */
-object NetWorkCore {
+object NetWorkCore: INetWork{
+
 
     lateinit var retrofit: Retrofit
 
@@ -20,16 +25,17 @@ object NetWorkCore {
         return this
     }
 
-    fun request(request: BaseRequest, callBack: INetWorkCallBack<BaseResponse> ){
-        var requestType:String = request.getRequestType()
 
-        var data:BaseResponse?
-        when(requestType){
-            "a" -> {
-                val data:Call<BaseResponse> = retrofit.create(TestService::class.java).getData("")
+    override fun requestNet(requestCode: Int, requestData: BaseRequest, callBack: INetWorkCallBack<BaseResponse>) {
+        var baseApi: BaseApi?
+        when(requestData.mCallRequest){
+            "TestRequest" -> {
+                baseApi = TestApi()
             }
-
+            else -> baseApi = null
         }
 
+        baseApi?.requestNet(requestCode, requestData as TestRequest, callBack)
     }
+
 }

@@ -5,9 +5,8 @@ package zhy.scau.com.keepyourword.network
  */
 interface INetWorkCallBack<T> {
 
-    fun onSuccess(data: T)
+    fun onSuccess(data: T?)
 
-    fun onFailed(failedCode: Int)
 
     fun onFailedWithOriginData(failedCode: Int, originData: String)
 }
