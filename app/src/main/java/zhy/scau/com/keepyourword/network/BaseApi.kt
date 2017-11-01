@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 /**
  * Created by ZhengHy on 2017-10-30.
  */
-abstract open class BaseApi(): INetWork {
+abstract class BaseApi(): INetWork {
 
 
     var mBaseUrl: String = "http://www.weather.com.cn/"

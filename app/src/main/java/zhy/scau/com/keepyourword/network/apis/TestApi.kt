@@ -1,5 +1,6 @@
 package zhy.scau.com.keepyourword.network.apis
 
+import android.util.Log
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.http.GET
@@ -13,6 +14,8 @@ import zhy.scau.com.keepyourword.network.responses.TestResponse
  */
 class TestApi():BaseApi(){
 
+    private var mCall: Call<TestResponse>? = null
+
     interface TestSevice{
 
         @GET("data/sk/{arg}.html")
@@ -25,10 +28,18 @@ class TestApi():BaseApi(){
 
     override fun requestNet(requestCode: Int, requestData: BaseRequest, callBack: INetWorkCallBack<BaseResponse>) {
         var testService:TestSevice = mRetrofit.create(TestSevice::class.java)
-        var dataList:Call<TestResponse> = testService.getTestData((requestData as TestRequest).mData)
-        dataList.enqueue(NetworkCallBackImpl<TestResponse>(callBack as INetWorkCallBack<TestResponse>))
+        mCall = testService.getTestData((requestData as TestRequest).mData)
+        mCall?.enqueue(NetworkCallBackImpl<TestResponse>(callBack as INetWorkCallBack<TestResponse>))
     }
 
+    override fun cancel(requestCode: Int) {
+        if(mCall != null){
+            if(mCall!!.isExecuted){
+                mCall!!.cancel()
+                Log.d("netwwwww","cancel yes!")
+            }
+        }
+    }
 
 
 }

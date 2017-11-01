@@ -5,4 +5,6 @@ package zhy.scau.com.keepyourword.network
  */
 interface INetWork {
     fun requestNet(requestCode: Int, requestData: BaseRequest, callBack: INetWorkCallBack<BaseResponse>)
+
+    fun cancel(requestCode: Int)
 }

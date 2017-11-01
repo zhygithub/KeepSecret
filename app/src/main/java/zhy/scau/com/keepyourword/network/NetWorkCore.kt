@@ -1,25 +1,15 @@
 package zhy.scau.com.keepyourword.network
 
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Retrofit
 import zhy.scau.com.keepyourword.network.apis.TestApi
 import zhy.scau.com.keepyourword.network.requests.TestRequest
-import zhy.scau.com.keepyourword.network.responses.TestResponse
 
 /**
  * Created by ZhengHy on 2017-10-26.
  */
 object NetWorkCore: INetWork{
 
+    var mApiList: HashMap<Int,BaseApi?> = HashMap()
 
-    lateinit var retrofit: Retrofit
-
-    init {
-        retrofit = Retrofit.Builder()
-                .baseUrl("https://api.github.com/")
-                .build()
-    }
 
     fun getInstance(): NetWorkCore{
         return this
@@ -35,7 +25,37 @@ object NetWorkCore: INetWork{
             else -> baseApi = null
         }
 
-        baseApi?.requestNet(requestCode, requestData as TestRequest, callBack)
+        addRequestToEnqueue(requestCode, baseApi)
+
+        var listener: INetWorkCallBack<BaseResponse> = object:INetWorkCallBack<BaseResponse>{
+            override fun onFailedWithOriginData(failedCode: Int, originData: String) {
+                mApiList.remove(requestCode)
+                callBack.onFailedWithOriginData(failedCode, originData)
+            }
+
+            override fun onSuccess(data: BaseResponse?) {
+                mApiList.remove(requestCode)
+                callBack.onSuccess(data)
+            }
+
+        }
+        baseApi?.requestNet(requestCode, requestData as TestRequest, listener)
+    }
+
+
+    override fun cancel(requestCode: Int) {
+        var baseApi: BaseApi? = mApiList.get(requestCode)
+
+        baseApi?.cancel(requestCode)
+    }
+
+    fun addRequestToEnqueue(requestCode: Int, baseApi: BaseApi?){
+        if(mApiList.get(requestCode) != null){
+            val api:BaseApi? = mApiList.get(requestCode)
+            api!!.cancel(requestCode)
+        }
+        mApiList.put(requestCode, baseApi)
+
     }
 
 }

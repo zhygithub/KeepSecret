@@ -9,7 +9,7 @@ import retrofit2.Response
  */
 class NetworkCallBackImpl<T>:Callback<T> {
 
-    lateinit var mINetWorkCallBack: INetWorkCallBack<T>
+    var mINetWorkCallBack: INetWorkCallBack<T>
 
     constructor(iNetWorkCallBack: INetWorkCallBack<T>){
         mINetWorkCallBack = iNetWorkCallBack

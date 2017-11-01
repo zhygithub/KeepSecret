@@ -59,16 +59,17 @@ public class TestPresenter extends AbstractPresenter<TestView> implements ITestC
         NetWorkCore.INSTANCE.requestNet(0, request, new INetWorkCallBack<BaseResponse>() {
             @Override
             public void onSuccess(BaseResponse data) {
-                Log.d("netwwwww",data.toString());
+                Log.d(" onSuccess netwwwww",data.toString());
             }
 
 
             @Override
             public void onFailedWithOriginData(int failedCode, String originData) {
-                Log.d("netwwwww",String.valueOf(failedCode) + originData);
+                Log.d("netwwwww","onFailedWithOriginData" + String.valueOf(failedCode) + originData);
 
             }
         });
+        NetWorkCore.INSTANCE.cancel(0);
 
     }
 
