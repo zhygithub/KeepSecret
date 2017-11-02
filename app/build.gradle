@@ -11,6 +11,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -28,7 +30,7 @@ dependencies {
 
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha3'
+    compile 'com.android.support.constraint:constraint-layout:1.1.0-beta3'
     compile 'com.android.support:design:26.+'
     compile 'com.yalantis:contextmenu:1.0.7'
     compile 'com.mxn.soul:flowingdrawer-core:2.0.0'
@@ -47,4 +49,6 @@ dependencies {
 repositories {
     mavenCentral()
     maven { url 'https://maven.google.com' }
+    google()
 }
+apply plugin: 'kotlin-android-extensions'
